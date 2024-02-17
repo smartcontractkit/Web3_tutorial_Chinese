@@ -16,6 +16,14 @@ Infura 测试网水龙头：https://www.infura.io/faucet/sepolia
 提出任何以太坊相关的技术问题（需要英文）
 - [StackOverflow](https://stackoverflow.com/) <br>
 提出任何技术问题（需要英文）
+- 其他可能会用到的技术文档
+    - [Solidity技术手册](https://www.freecodecamp.org/chinese/news/learn-solidity-handbook/#what-are-function-modifiers)
+    - [以太坊官方文档](https://ethereum.org/zh)
+    - [Solidity官方文档](https://docs.soliditylang.org/zh/v0.8.20/)
+    - [Chainlink官方文档](https://docs.chain.link/)
+    - [Hardhat官方文档](https://hardhat.org/)
+    - [ether.js官方文档](https://docs.ethers.org/v6/)
+    - [openzeppelin官方文档](https://docs.openzeppelin.com/contracts/5.x/)
 
 # 目录
 <details>
@@ -50,34 +58,66 @@ Infura 测试网水龙头：https://www.infura.io/faucet/sepolia
   </li>  
 </ol>
 </details>
+
 <details>
-<summary> <a href="#lesson-0-the-edge-of-the-rabbit-hole">第二课：Solidity基础：Hello World</a></summary>
+<summary> <a href="#第二课solidity基础hello-world">第二课：Solidity基础：Hello World</a></summary>
 <ol>
   <li>
-  <a href="#第一课区块链基础知识--操作"> Remix，Solidity编译器和开源协议 </a>
+  <a href="#remixsolidity编译器和开源协议"> Remix，Solidity编译器和开源协议 </a>
   </li>
   <li>
-  <a href="#区块链简史块链简史"> Solidity 基础数据类型 </a>
+  <a href="#solidity-基础数据类型"> Solidity基础数据类型 </a>
   </li>
   <li>
-  <a href="#区块链设计哲学去中心化和共识"> Solidity 函数 </a>
+  <a href="#solidity-函数"> Solidity函数 </a>
   </li>
   <li>
-  <a href="#智能合约简介"> Solidity 存储模式：memory, storage, calldata </a>
+  <a href="#solidity-存储模式memory-storage-calldata"> Solidity存储模式：memory, storage, calldata </a>
   </li>
   <li>
-  <a href="#自托管钱包metamask"> Solidity 数据结构：数组和结构体 </a>
+  <a href="#solidity-基础数据结构数组和结构体"> Solidity数据结构：数组和结构体 </a>
   </li>  
   <li>
-  <a href="#密码学基础--metamask配置"> 合约间交互：工厂模式</a>
+  <a href="#合约间交互工厂模式"> 合约间交互：工厂模式</a>
   </li>  
 </ol>
 </details>
+
+<details>
+<summary> <a href="#第三课solidity进阶fundme">第三课：Solidity进阶：FundMe</a></summary>
+<ol>
+  <li>
+  <a href="#通过函数发送eth"> 通过函数发送ETH </a>
+  </li>
+  <li>
+  <a href="#通过预言机设定最小额度"> 通过预言机设定最小额度 </a>
+  </li>
+  <li>
+  <a href="#通过函数提取合约中的eth"> 通过函数提取合约中的ETH </a>
+  </li>
+  <li>
+  <a href="#函数修饰符和时间锁"> 修改器和时间锁 </a>
+  </li>
+  <li>
+  <a href="#token和coin的区别"> Token和Coin的区别 </a>
+  </li>  
+  <li>
+  <a href="#创建一个token合约"> 创建一个Token合约</a>
+  </li>  
+  <li>
+  <a href="#继承erc-20合约"> 继承ERC-20合约</a>
+  </li>  
+    <li>
+  <a href="#部署和验证合约"> 部署和验证合约</a>
+  </li>  
+</ol>
+</details>
+
 <br><br>
 
 # 第一课：区块链基础知识 & 操作
 第一课视频教程：WIP<br>
-第一课代码：https://github.com/QingyangKong/Web3_tutorial_lesson2 
+第一课代码：本章没有代码
 ## 区块链简史
 - [《比特币白皮书，一种点对点的电子现金系统》](https://bitcoin.org/files/bitcoin-paper/bitcoin_zh_cn.pdf)
     - [比特币发明人 - 中本聪(Nakamoto Satoshi)](https://zh.wikipedia.org/zh-cn/%E4%B8%AD%E6%9C%AC%E8%81%AA)
@@ -129,6 +169,8 @@ Infura 测试网水龙头：https://www.infura.io/faucet/sepolia
 <br>:tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada:<br>
 
 # 第二课：Solidity基础：Hello World
+第二课视频教程：WIP<br>
+第二课代码：https://github.com/QingyangKong/Web3_tutorial_lesson2 
 ## Remix，Solidity编译器和开源协议
 - [开源软件许可协议简介](https://developer.aliyun.com/article/25089)
 - [EVM（以太坊虚拟机） 介绍](https://ethereum.org/zh/developers/docs/evm)
@@ -155,4 +197,46 @@ Solidity 官方文档中，关于数据和结构体，英文文档比中文文�
     - [数据结构 - 结构体（中文对照）](https://docs.soliditylang.org/zh/v0.8.17/types.html#structs)
 ## 合约间交互：工厂模式
 - [如何使用工厂模式（英文）](https://betterprogramming.pub/learn-solidity-the-factory-pattern-75d11c3e7d29)
-- [Solidity中的工厂模式（英文）](https://medium.com/@solidity101/demystifying-the-factory-pattern-in-solidity-efficient-contract-deployment-with-factory-pattern-e233ea6d1ec0#:~:text=Understanding%20the%20Factory%20Pattern&text=In%20the%20context%20of%20Ethereum,with%20predefined%20functionalities%20and%20structures. )
+- [Solidity中的工厂模式（英文）](https://medium.com/@solidity101/demystifying-the-factory-pattern-in-solidity-efficient-contract-deployment-with-factory-pattern-e233ea6d1ec0#:~:text=Understanding%20the%20Factory%20Pattern&text=In%20the%20context%20of%20Ethereum,with%20predefined%20functionalities%20and%20structures.)
+
+<br>:tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada:<br>
+恭喜完成第二课的学习！
+<br>:tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada:<br>
+
+# 第三课：Solidity进阶：FundMe
+第三课视频教程：WIP<br>
+第三课代码：WIP
+## 通过函数发送ETH
+- [以太坊账户：EOA和合约账户](https://ethereum.org/zh/developers/docs/accounts#types-of-account)
+## 通过预言机设定最小额度
+
+- [预言机(oracle)定义](https://chain.link/education/blockchain-oracles)
+- [Chainlink技术文档](https://docs.chain.link/)
+    - [Chainlink喂价文档](https://docs.chain.link/data-feeds)
+    - [Chainlink喂价合约地址列表](https://docs.chain.link/data-feeds/price-feeds/addresses?network=ethereum&page=1)
+
+-Solidity的数据类型没有double或者floating（小数），如果想要表示带有小数的以太币，把wei当成最小单位，它是ether的10e-18，也就是0.000000000000000001。
+- [以太币面额转换器](https://eth-converter.com/)
+- [以太币面额](https://ethereum.org/zh/developers/docs/intro-to-ether#denominations)
+- [Solidity 中如何使用浮点数](https://www.freecodecamp.org/chinese/news/learn-solidity-handbook/#how-to-work-with-floating-point-numbers-in-solidity)
+## 通过函数提取合约中的ETH
+- [如何发送和接受ETH](https://www.freecodecamp.org/chinese/news/learn-solidity-handbook/#how-to-send-and-receive-ether)
+- [三种转账方式: transfer, send, call](https://solidity-by-example.org/sending-ether/)
+## 函数修饰符和时间锁
+- [函数修饰符是什么](https://www.freecodecamp.org/chinese/news/learn-solidity-handbook/#what-are-function-modifiers)
+- [怎样开发智能合约中的时间锁](https://blog.chain.link/timelock-smart-contracts-zh/#post-title)
+- [Uinx时间戳](https://www.unixtimestamp.com/)
+## Token和Coin的区别
+- [Token和Coin的区别](https://www.ledger.com/academy/crypto/what-is-the-difference-between-coins-and-tokens)
+## 创建一个Token合约
+- [Token介绍](https://docs.openzeppelin.com/contracts/5.x/tokens)
+- [Solidity中的继承](https://www.freecodecamp.org/chinese/news/learn-solidity-handbook/#inheritance-in-solidity)
+## 继承ERC-20合约
+- [ERC-20标准合约](https://docs.openzeppelin.com/contracts/5.x/erc20)
+## 部署和验证合约
+- 注册[从区块链浏览器（Etherscan）](https://etherscan.io/)账户，并且获取API key
+- [怎样通过 Etherscan 验证智能合约](https://blog.chain.link/how-to-verify-a-smart-contract-on-etherscan-zh/)
+
+<br>:tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada:<br>
+恭喜完成第三课的学习！
+<br>:tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada:<br>
