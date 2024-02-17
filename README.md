@@ -124,9 +124,9 @@ Infura 测试网水龙头：https://www.infura.io/faucet/sepolia
 - [gas费介绍](https://ethereum.org/zh/developers/docs/gas)
 - [EIP-1559](https://ethereum.org/zh/developers/docs/gas#what-was-the-london-upgrade-eip-1559)
 
-<br>:tada::tada::tada::tada::tada::tada::tada::tada:<br>
+<br>:tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada:<br>
 恭喜完成第一课的学习！
-<br>:tada::tada::tada::tada::tada::tada::tada::tada:<br>
+<br>:tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada:<br>
 
 # 第二课：Solidity基础：Hello World
 ## Remix，Solidity编译器和开源协议
