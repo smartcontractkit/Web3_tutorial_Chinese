@@ -73,8 +73,11 @@ Infura 测试网水龙头：https://www.infura.io/faucet/sepolia
   </li>  
 </ol>
 </details>
+<br><br>
 
 # 第一课：区块链基础知识 & 操作
+第一课视频教程：WIP<br>
+第一课代码：https://github.com/QingyangKong/Web3_tutorial_lesson2 
 ## 区块链简史
 - [《比特币白皮书，一种点对点的电子现金系统》](https://bitcoin.org/files/bitcoin-paper/bitcoin_zh_cn.pdf)
     - [比特币发明人 - 中本聪(Nakamoto Satoshi)](https://zh.wikipedia.org/zh-cn/%E4%B8%AD%E6%9C%AC%E8%81%AA)
@@ -120,6 +123,11 @@ Infura 测试网水龙头：https://www.infura.io/faucet/sepolia
 ## 燃料费（gas费）介绍
 - [gas费介绍](https://ethereum.org/zh/developers/docs/gas)
 - [EIP-1559](https://ethereum.org/zh/developers/docs/gas#what-was-the-london-upgrade-eip-1559)
+
+<br>:tada::tada::tada::tada::tada::tada::tada::tada:<br>
+恭喜完成第一课的学习！
+<br>:tada::tada::tada::tada::tada::tada::tada::tada:<br>
+
 # 第二课：Solidity基础：Hello World
 ## Remix，Solidity编译器和开源协议
 - [开源软件许可协议简介](https://developer.aliyun.com/article/25089)
