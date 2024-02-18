@@ -169,8 +169,8 @@ Infura 测试网水龙头：https://www.infura.io/faucet/sepolia
 <br>:tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada:<br>
 
 # 第二课：Solidity基础：Hello World
-第二课视频教程：WIP<br>
-第二课代码：https://github.com/QingyangKong/Web3_tutorial_lesson2 
+<b>第二课视频教程：WIP<br></b>
+<b>第二课代码：https://github.com/QingyangKong/Web3_tutorial_lesson2 </b>
 ## Remix，Solidity编译器和开源协议
 - [开源软件许可协议简介](https://developer.aliyun.com/article/25089)
 - [EVM（以太坊虚拟机） 介绍](https://ethereum.org/zh/developers/docs/evm)
@@ -204,8 +204,8 @@ Solidity 官方文档中，关于数据和结构体，英文文档比中文文�
 <br>:tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada:<br>
 
 # 第三课：Solidity进阶：FundMe
-第三课视频教程：WIP<br>
-第三课代码：WIP
+<b>第三课视频教程：WIP</b><br>
+<b>第三课代码：https://github.com/QingyangKong/Web3_tutorial_lesson3 <b>
 ## 通过函数发送ETH
 - [以太坊账户：EOA和合约账户](https://ethereum.org/zh/developers/docs/accounts#types-of-account)
 ## 通过预言机设定最小额度
