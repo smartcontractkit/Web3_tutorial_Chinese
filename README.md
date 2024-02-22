@@ -113,6 +113,42 @@ Infura 测试网水龙头：https://www.infura.io/faucet/sepolia
 </ol>
 </details>
 
+<details>
+<summary> <a href="#第四课hardhat基础部署交互fundme">第四课：Hardhat基础：部署交互FundMe</a></summary>
+<ol>
+  <li>
+  <a href="#环境搭建hardhat介绍"> 环境搭建：Hardhat介绍 </a>
+  </li>
+  <li>
+  <a href="#环境搭建安装nodejs"> 环境搭建：安装node.js </a>
+  </li>
+  <li>
+  <a href="#环境搭建安装vs-code和git"> 环境搭建：安装VS Code和git </a>
+  </li>
+  <li>
+  <a href="#创建hardhat项目"> 创建Hardhat项目 </a>
+  </li>
+  <li>
+  <a href="#通过hardhat编译和部署合约"> 通过Hardhat编译和部署合约 </a>
+  </li>  
+  <li>
+  <a href="#hardhat网络其他配置"> Hardhat网络&其他配置</a>
+  </li>  
+  <li>
+  <a href="#与fundme合约交互"> 与FundMe合约交互</a>
+  </li>  
+    <li>
+  <a href="#创建hardhat自定义任务"> 创建Hardhat自定义任务</a>
+  </li>  
+</ol>
+</details>
+
+<br><br>
+# 教程中用到的代码
+- 第一课：无
+- 第二课：https://github.com/QingyangKong/Web3_tutorial_lesson2
+- 第三课：https://github.com/QingyangKong/Web3_tutorial_lesson3
+- 第四课：https://github.com/QingyangKong/Web3_tutorial_lesson4
 <br><br>
 
 # 第一课：区块链基础知识 & 操作
@@ -236,6 +272,53 @@ Solidity 官方文档中，关于数据和结构体，英文文档比中文文�
 ## 部署和验证合约
 - 注册[从区块链浏览器（Etherscan）](https://etherscan.io/)账户，并且获取API key
 - [怎样通过 Etherscan 验证智能合约](https://blog.chain.link/how-to-verify-a-smart-contract-on-etherscan-zh/)
+
+<br>:tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada:<br>
+恭喜完成第三课的学习！
+<br>:tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada:<br>
+
+# 第四课：Hardhat基础：部署交互FundMe
+<b>第四课视频教程：WIP</b><br>
+<b>第四课代码：https://github.com/QingyangKong/Web3_tutorial_lesson4 <b>
+## 环境搭建：Hardhat介绍
+- [Hardhat官网（英文）](https://hardhat.org/)
+- [Hardhat，Truffle和Foundry对比（英文）](https://smartcontract.tips/articoli/truffle-hardhat-foundry-compare/)
+- [Hardhat和Foundry在测试方面的对比（英文）](https://ethereum.stackexchange.com/questions/143171/hardhat-vs-foundry-which-to-use-for-testing)
+## 环境搭建：安装node.js
+- [如何在Windows上安装Linux](https://learn.microsoft.com/zh-cn/windows/wsl/install)
+- [在MacOS安装node的5种方式](https://stackoverflow.com/questions/28017374/what-is-the-recommended-way-to-install-node-js-nvm-and-npm-on-macos-x)
+- [MacOS Homebrew安装](https://brew.sh/)
+- [面向初学者的 Linux Shell——解释 Bash、Zsh 和 Fish](https://www.freecodecamp.org/chinese/news/linux-shells-explained/)
+- [zsh的配置文件（英文）](https://www.freecodecamp.org/news/how-do-zsh-configuration-files-work)
+- [如何在MacOS上卸载node](https://macpaw.com/how-to/uninstall-node-mac)
+
+## 环境搭建：安装VS Code和git
+- [brew cask和formulae的区别（英文）](https://stackoverflow.com/questions/46403937/what-is-the-difference-between-brew-install-x-and-brew-cask-install-x)
+- [git官网](https://git-scm.com/)
+- [使用git和github的常见命令](https://www.freecodecamp.org/chinese/news/how-to-use-basic-git-and-github-commands/)
+
+## 创建Hardhat项目
+- [Hardhat官网：创建Hardhat项目](https://hardhat.org/tutorial/creating-a-new-hardhat-project)
+- [怎样开发智能合约中的时间锁](https://blog.chain.link/timelock-smart-contracts-zh/#post-title)
+- [Uinx时间戳](https://www.unixtimestamp.com/)
+## 通过Hardhat编译和部署合约
+- [通过Hardhat编译合约](https://hardhat.org/hardhat-runner/docs/guides/compile-contracts)
+- [通过Hardhat部署合约](https://hardhat.org/hardhat-runner/docs/guides/deploying)
+- [Hardhat 所使用的 ethers](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-ethers)
+- [ethersjs v6官方文档](https://docs.ethers.org/v6/getting-started/)
+- [ethersjs v5到v6](https://docs.ethers.org/v6/migrating/)
+## Hardhat网络&其他配置
+- [Hardhat官网：暂时网络和独立网络（英文）](https://hardhat.org/hardhat-network/docs/overview)
+- [dotenv介绍](https://juejin.cn/post/6844904198929121288)
+- [NPM：Chainlink/env-enc介绍（英文）](https://www.npmjs.com/package/@chainlink/env-enc)
+- [Alchemy注册](https://www.alchemy.com/)
+
+## 与FundMe合约交互
+- [Hardhat官网：provider（英文）](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-ethers#provider-object)
+
+## 创建Hardhat自定义任务
+- [module.exprts 介绍](https://www.freecodecamp.org/chinese/news/module-exports-how-to-export-in-node-js-and-javascript)
+- [Hardhat官网：创建任务（英文）](https://hardhat.org/hardhat-runner/docs/advanced/create-task)
 
 <br>:tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada:<br>
 恭喜完成第三课的学习！
