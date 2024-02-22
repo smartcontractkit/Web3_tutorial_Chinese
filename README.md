@@ -143,7 +143,8 @@ Infura 测试网水龙头：https://www.infura.io/faucet/sepolia
 </ol>
 </details>
 
-<br><br>
+<br>
+
 # 教程中用到的代码
 - 第一课：无
 - 第二课：https://github.com/QingyangKong/Web3_tutorial_lesson2
@@ -321,5 +322,5 @@ Solidity 官方文档中，关于数据和结构体，英文文档比中文文�
 - [Hardhat官网：创建任务（英文）](https://hardhat.org/hardhat-runner/docs/advanced/create-task)
 
 <br>:tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada:<br>
-恭喜完成第三课的学习！
+恭喜完成第四课的学习！
 <br>:tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada:<br>
