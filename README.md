@@ -143,6 +143,54 @@ Infura 测试网水龙头：https://www.infura.io/faucet/sepolia
 </ol>
 </details>
 
+<details>
+<summary> <a href="#第五课hardhat进阶测试fundme">第五课：Hardhat进阶：测试FundMe</a></summary>
+<ol>
+  <li>
+  <a href="#hardhat-测试介绍"> Hardhat测试介绍 </a>
+  </li>
+  <li>
+  <a href="#hardhat-deploy"> Hardhat deploy任务 </a>
+  </li>
+  <li>
+  <a href="#使用mock合约"> 使用mock合约 </a>
+  </li>
+  <li>
+  <a href="#给fundme写单元集成测试"> 给FundMe写单元测试 </a>
+  </li>
+  <li>
+  <a href="#gas-reporter和coverage"> gas reporter和coverage </a>
+  </li>  
+</ol>
+</details>
+
+<details>
+<summary> <a href="#第六课hardhat基础部署交互fundme">第六课：跨链应用</a></summary>
+<ol>
+  <li>
+  <a href="#nft介绍"> NFT介绍 </a>
+  </li>
+  <li>
+  <a href="#nft的metadata"> NFT的metadata </a>
+  </li>
+  <li>
+  <a href="#erc721基础合约"> NFT基础合约 </a>
+  </li>
+  <li>
+  <a href="#chainlink-ccip"> Chainlink ccip </a>
+  </li>
+  <li>
+  <a href="#跨链资产池"> 资产跨链池 </a>
+  </li>  
+  <li>
+  <a href="#chainlink-local-和单元测试"> chainlink-local & 单元测试</a>
+  </li>  
+  <li>
+  <a href="#跨链nft的hardhat自定义任务"> 跨链NFT的Hardhat的自定义任务</a>
+  </li>  
+</ol>
+</details>
+
 <br>
 
 # 教程中用到的代码
@@ -150,6 +198,8 @@ Infura 测试网水龙头：https://www.infura.io/faucet/sepolia
 - 第二课：https://github.com/QingyangKong/Web3_tutorial_lesson2
 - 第三课：https://github.com/QingyangKong/Web3_tutorial_lesson3
 - 第四课：https://github.com/QingyangKong/Web3_tutorial_lesson4
+- 第五课：https://github.com/QingyangKong/Web3_tutorial_lesson5
+- 第六课：https://github.com/QingyangKong/Web3_tutorial_lesson6
 <br><br>
 
 # 第一课：区块链基础知识 & 操作
@@ -281,6 +331,7 @@ Solidity 官方文档中，关于数据和结构体，英文文档比中文文�
 # 第四课：Hardhat基础：部署交互FundMe
 <b>第四课视频教程：WIP</b><br>
 <b>第四课代码：https://github.com/QingyangKong/Web3_tutorial_lesson4 <b>
+
 ## 环境搭建：Hardhat介绍
 - [Hardhat官网（英文）](https://hardhat.org/)
 - [Hardhat，Truffle和Foundry对比（英文）](https://smartcontract.tips/articoli/truffle-hardhat-foundry-compare/)
@@ -318,9 +369,77 @@ Solidity 官方文档中，关于数据和结构体，英文文档比中文文�
 - [Hardhat官网：provider（英文）](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-ethers#provider-object)
 
 ## 创建Hardhat自定义任务
-- [module.exprts 介绍](https://www.freecodecamp.org/chinese/news/module-exports-how-to-export-in-node-js-and-javascript)
+- [module.exports 介绍](https://www.freecodecamp.org/chinese/news/module-exports-how-to-export-in-node-js-and-javascript)
 - [Hardhat官网：创建任务（英文）](https://hardhat.org/hardhat-runner/docs/advanced/create-task)
 
 <br>:tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada:<br>
 恭喜完成第四课的学习！
+<br>:tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada:<br>
+
+# 第五课：Hardhat进阶：测试FundMe
+<b>第五课视频教程：WIP</b><br>
+<b>第五课代码：https://github.com/QingyangKong/Web3_tutorial_lesson5 <b>
+
+## Hardhat 测试介绍
+- [智能合约测试](https://ethereum.org/zh/developers/docs/smart-contracts/testing/)
+- [Hardhat test官方文档](https://hardhat.org/tutorial/testing-contracts)
+
+## Hardhat deploy
+- [Hardhat Deploy官方文档](https://hardhat.org/hardhat-runner/docs/guides/deploying)
+- [Hadhat Deploy插件](https://www.npmjs.com/package/hardhat-deploy)
+
+## 使用mock合约
+- [什么是mock合约](https://ethereum.org/zh/developers/tutorials/how-to-mock-solidity-contracts-for-testing/)
+- [Chainlink喂价Mock合约](https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.6/tests/MockV3Aggregator.sol)
+
+## 给FundMe写单元&集成测试
+- [什么是单元测试](https://aws.amazon.com/cn/what-is/unit-testing/)
+- [javascript测试框架Mocha](https://mochajs.org/)
+- [javascript测试框架Chai](https://www.chaijs.com/)
+
+## gas reporter和coverage
+- [Hardhat gas reporter](https://www.npmjs.com/package/hardhat-gas-reporter)
+- [Solidity coverage](https://www.npmjs.com/package/solidity-coverage)
+
+<br>:tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada:<br>
+恭喜完成第五课的学习！
+<br>:tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada:<br>
+
+# 第六课：Hardhat基础：部署交互FundMe
+<b>第六课视频教程：WIP</b><br>
+<b>第六课代码：https://github.com/QingyangKong/Web3_tutorial_lesson6 <b>
+
+## NFT介绍
+- [NFT非同质代币是什么](https://ethereum.org/zh/nft/#what-are-nfts)
+- [NFT有哪些用户案例](https://chain.link/education/nfts)
+- [动态NFT是什么](https://chain.link/education-hub/what-is-dynamic-nft)
+
+## NFT的metadata
+- [NFT metadata(Opensea标准)](https://docs.opensea.io/docs/metadata-standards)
+
+## ERC721基础合约
+- [Openzeppelin合约 wizard](https://www.openzeppelin.com/contracts)
+- [ERC721(OpenZeppelin)](https://docs.openzeppelin.com/contracts/3.x/erc721)
+- [ERC1155(OpenZeppelin)](https://docs.openzeppelin.com/contracts/3.x/erc1155)
+- [ERC721 vs ERC1155](https://www.alchemy.com/blog/comparing-erc-721-to-erc-1155)
+
+## Chainlink CCIP
+- [什么是链间互操作性](https://chain.link/education-hub/blockchain-interoperability)
+- [Chainlink CCIP官方文档](https://docs.chain.link/ccip)
+- [跨链桥的7个风险](https://blog.chain.link/cross-chain-bridge-vulnerabilities/)
+- [使用CCIP的5个例子](https://blog.chain.link/how-to-use-ccip/)
+- [区块状态](https://www.alchemy.com/overviews/ethereum-commitment-levels)
+
+## 跨链资产池
+- [NFT池子样例合约](https://github.com/QingyangKong/Web3_tutorial_lesson6/blob/1-chainlink-local/contracts/NFTPoolLockAndRelease.sol)
+- [什么是封装加密资产](https://www.kraken.com/learn/what-are-wrapped-crypto-assets)
+
+## Chainlink-local 和单元测试
+- [chainlink local](https://github.com/smartcontractkit/chainlink-local/tree/main)
+
+## 跨链NFT的hardhat自定义任务
+- [hardhat-deploy companion网络](https://github.com/wighawag/hardhat-deploy?tab=readme-ov-file#companionnetworks)
+
+<br>:tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada:<br>
+恭喜完成第六课的学习！
 <br>:tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada:<br>
