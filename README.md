@@ -1,5 +1,5 @@
 # Web3 教程 - Solidity，Hardhat，Token standard，Interoperability
-[中文](#内容介绍) | [English for review](#introduction)
+[中文](#内容介绍) | [English for review](#english-for-review)
 
 这个 repository 是初学者课程《Web3 和区块链技术》的代码部分，并且包括课程中提到过的资料。
 
