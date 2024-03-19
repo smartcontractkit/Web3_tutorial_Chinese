@@ -284,8 +284,10 @@ Solidity 官方文档中，关于数据和结构体，英文文档比中文文�
 - [数据结构 - 结构体（英文）](https://docs.soliditylang.org/en/v0.8.24/types.html#structs)
     - [数据结构 - 结构体（中文对照）](https://docs.soliditylang.org/zh/v0.8.17/types.html#structs)
 ## 合约间交互：工厂模式
+- [Solidity 工厂模式介绍](https://learnblockchain.cn/article/1952)
 - [如何使用工厂模式（英文）](https://betterprogramming.pub/learn-solidity-the-factory-pattern-75d11c3e7d29)
 - [Solidity中的工厂模式（英文）](https://medium.com/@solidity101/demystifying-the-factory-pattern-in-solidity-efficient-contract-deployment-with-factory-pattern-e233ea6d1ec0#:~:text=Understanding%20the%20Factory%20Pattern&text=In%20the%20context%20of%20Ethereum,with%20predefined%20functionalities%20and%20structures.)
+- []
 
 <br>:tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada:<br>
 恭喜完成第二课的学习！
