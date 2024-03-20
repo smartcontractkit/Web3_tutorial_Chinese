@@ -1,8 +1,7 @@
-// SPDX-License-Identifier: MIT
+//SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
 
-pragma solidity ^0.8.19;
-
-import "./HelloWorld.sol";
+import { HelloWorld } from "./HelloWorld.sol";
 
 contract HelloWorldFactory {
     HelloWorld hw;
@@ -14,11 +13,18 @@ contract HelloWorldFactory {
         hws.push(hw);
     }
 
-    function getHwByIndex(uint256 index) public view returns (HelloWorld _hw) {
-        _hw = hws[index];
+    function getHelloWorldByIndex(uint256 _index) public view returns (HelloWorld) {
+        return hws[_index];
     }
 
-    function callHwFunctionByIndex(uint256 index) public view returns (string memory result) {
-        result = hws[index].sayHello();
+    function callSayHelloFromFactory(uint256 _index, uint256 _id) 
+        public 
+        view 
+        returns (string memory) {
+            return hws[_index].sayHello(_id);
+    }
+
+    function callSetHelloWorldFromFactory(uint256 _index, string memory newString, uint256 _id) public {
+        hws[_index].setHelloWorld(newString, _id);
     }
 }

@@ -1,34 +1,34 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.13;
+pragma solidity ^0.8.20;
+
 contract HelloWorld {
-	string str = "Hello World";
-
+    string strVar = "Hello World";
+  
     struct Info {
-        string username;
-        string helloPhrase;
+        string phrase;
+        uint256 id;
+        address addr;
     }
 
-    Info[] info;
+    Info[] infos;
 
-	function setString(string memory strToSet) public {
-		str = strToSet; 
+    mapping(uint256 id => Info info) infoMapping;
+  
+    function sayHello(uint256 _id) public view returns(string memory) {
+        if(infoMapping[_id].addr == address(0x0)) {
+            return addinfo(strVar); 
+        } else {
+            return addinfo(infoMapping[_id].phrase);
+        }
+    }
+    
+    function setHelloWorld(string memory newString, uint256 _id) public {
+        Info memory info = Info(newString, _id, msg.sender);
+        infoMapping[_id] = info;
     }
 
-    function setInfo(string memory _username, string memory _helloPhrase) public {
-        info.push(Info(_username, _helloPhrase));
-    }
 
-    function getInfoByIndex(uint256 _index) public view returns(Info memory _info) {
-        _info = info[_index];
+    function addinfo(string memory helloWorldStr) internal pure returns(string memory) {
+        return string.concat(helloWorldStr, " from Frank's contract.");
     }
-
-    function sayHello() public view returns (string memory result) {
-        result = concatStrings(str);
-    }
-
-    function concatStrings(string memory strTobeAdded) public pure returns (string memory result) {
-        result = string.concat(strTobeAdded, "from Frank's smart contract");
-    }
-
-    function someFunction(bytes32 st) public {}
 }
