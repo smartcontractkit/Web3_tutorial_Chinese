@@ -326,6 +326,8 @@ Solidity 官方文档中，关于数据和结构体，英文文档比中文文�
 - [Solidity中的继承](https://www.freecodecamp.org/chinese/news/learn-solidity-handbook/#inheritance-in-solidity)
 ## 继承ERC-20合约
 - [ERC-20标准合约](https://docs.openzeppelin.com/contracts/5.x/erc20)
+- [ERC-20标准合约代码](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol)
+- [virtual和override](https://learnblockchain.cn/docs/solidity/0.6.12/contracts/inheritance.html)
 ## 部署和验证合约
 - 注册[从区块链浏览器（Etherscan）](https://etherscan.io/)账户，并且获取API key
 - [怎样通过 Etherscan 验证智能合约](https://blog.chain.link/how-to-verify-a-smart-contract-on-etherscan-zh/)
