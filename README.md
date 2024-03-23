@@ -299,9 +299,10 @@ Solidity 官方文档中，关于数据和结构体，英文文档比中文文�
 <b>第三课视频教程：WIP</b><br>
 <b>第三课代码：https://github.com/smartcontractkit/Web3_tutorial_Chinese/tree/main/lesson-3 <b>
 ## 通过函数发送ETH
+- [payable关键字](https://docs.alchemy.com/docs/solidity-payable-functions)
 - [以太坊账户：EOA和合约账户](https://ethereum.org/zh/developers/docs/accounts#types-of-account)
+- [Wei，GWei，Finney和ether](https://www.alchemy.com/gwei-calculator)
 ## 通过预言机设定最小额度
-
 - [预言机(oracle)定义](https://chain.link/education/blockchain-oracles)
 - [Chainlink技术文档](https://docs.chain.link/)
     - [Chainlink喂价文档](https://docs.chain.link/data-feeds)
