@@ -1,3 +1,2 @@
-exports.deployContract = require("./deploy-contract")
-exports.blockNumber = require("./block-number")
-exports.fundContract = require("./fund-contract")
+exports.deployConract = require("./deploy-fundme")
+exports.interactContract = require("./interact-fundme")

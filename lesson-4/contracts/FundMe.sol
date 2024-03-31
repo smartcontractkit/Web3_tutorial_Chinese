@@ -1,35 +1,46 @@
-// SPDX-License-Identifier: MIT
+//SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
 
-pragma solidity ^0.8.19;
-import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
+import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol";
+
+// 1. 创建一个收款函数
+// 2. 记录投资人并且查看
+// 3. 在锁定期内，达到目标值，生产商可以提款
+// 4. 在锁定期内，没有达到目标值，投资人在锁定期以后退款
 
 contract FundMe {
+    mapping(address => uint256) public fundersToAmount;
 
-    AggregatorV3Interface internal dataFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
-    mapping(address funder => uint256 balance) public listOfFunders;
-    uint256 minimum_usd = 100;
-    uint256 target = 200;
-    address owner;
+    uint256 constant MINIMUM_VALUE = 100 * 10 ** 18; //USD
+    
+    AggregatorV3Interface internal dataFeed;
 
-    // status control
+    uint256 constant TARGET = 1000 * 10 ** 18;
+
+    address public owner;
+
+    uint256 deploymentTimestamp;
     uint256 lockTime;
-    uint256 deploymentTime;
-    bool public fundSuccess;
-    bool public windowOpen = true;
+
+    address erc20Addr;
+
+    bool public getFundSuccess = false;
 
     constructor(uint256 _lockTime) {
+        // sepolia testnet
+        dataFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
         owner = msg.sender;
+        deploymentTimestamp = block.timestamp;
         lockTime = _lockTime;
-        deploymentTime = block.timestamp;
     }
 
-    function fund() public payable {
-        require(windowOpen, "the campaign is closed");
-        require(convertEthToUsd(msg.value) >= minimum_usd * 10 ** 18, "Please send more ETH");
-        listOfFunders[msg.sender] = msg.value;
+    function fund() external payable {
+        require(convertEthToUsd(msg.value) >= MINIMUM_VALUE, "Send more ETH");
+        require(block.timestamp < deploymentTimestamp + lockTime, "window is closed");
+        fundersToAmount[msg.sender] = msg.value;
     }
 
-    function convertEthToUsd(uint256 ethAmount) public view returns (uint256 result) {
+    function getChainlinkDataFeedLatestAnswer() public view returns (int) {
         // prettier-ignore
         (
             /* uint80 roundID */,
@@ -38,38 +49,61 @@ contract FundMe {
             /*uint timeStamp*/,
             /*uint80 answeredInRound*/
         ) = dataFeed.latestRoundData();
-        result = uint(answer) * ethAmount / (10 ** 8);
+        return answer;
     }
 
-    function getFund() public onlyOwner unlocked {
-        require(convertEthToUsd(address(this).balance) >= target * 10 ** 18, "target is not reached");
-        // 第一种方法：transfer
-        payable(msg.sender).transfer(address(this).balance);
-        fundSuccess = true;
-        windowOpen = false;
+    function convertEthToUsd(uint256 ethAmount) internal view returns(uint256){
+        uint256 ethPrice = uint256(getChainlinkDataFeedLatestAnswer());
+        return ethAmount * ethPrice / (10 ** 8);
+    }
+
+    function transferOwnership(address newOwner) public onlyOwner{
+        owner = newOwner;
+    }
+
+    function getFund() external windowClosed onlyOwner{
+        require(convertEthToUsd(address(this).balance) >= TARGET, "Target is not reached");
+        // transfer: transfer ETH and revert if tx failed
+        // payable(msg.sender).transfer(address(this).balance);
         
-        // // 第二种方法：send
+        // send: transfer ETH and return false if failed
         // bool success = payable(msg.sender).send(address(this).balance);
-        // require(success, "withdrawal failed!");
-        // // 第三种方法： call
-        // (bool success1, ) = msg.sender.call{value: address(this).balance}("");
-        // require(success1, "withdrawal failed");
+        // require(success, "tx failed");
+        
+        // call: transfer ETH with data return value of function and bool 
+        bool success;
+        (success, ) = payable(msg.sender).call{value: address(this).balance}("");
+        require(success, "transfer tx failed");
+        fundersToAmount[msg.sender] = 0;
+        getFundSuccess = true; // flag
     }
 
-    function getRefund() public unlocked {
-        require(convertEthToUsd(address(this).balance) < target, "target is reached");
-        require(listOfFunders[msg.sender] != 0, "there is no fund for you");
-        payable(msg.sender).transfer(listOfFunders[msg.sender]);
-        windowOpen = false;
+    function refund() external windowClosed {
+        require(convertEthToUsd(address(this).balance) < TARGET, "Target is reached");
+        require(fundersToAmount[msg.sender] != 0, "there is no fund for you");
+        bool success;
+        (success, ) = payable(msg.sender).call{value: fundersToAmount[msg.sender]}("");
+        require(success, "transfer tx failed");
+        fundersToAmount[msg.sender] = 0;
+    }
+
+    function setFunderToAmount(address funder, uint256 amountToUpdate) external {
+        require(msg.sender == erc20Addr, "you do not have permission to call this funtion");
+        fundersToAmount[funder] = amountToUpdate;
+    }
+
+    function setErc20Addr(address _erc20Addr) public onlyOwner {
+        erc20Addr = _erc20Addr;
+    }
+
+    modifier windowClosed() {
+        require(block.timestamp >= deploymentTimestamp + lockTime, "window is not closed");
+        _;
     }
 
     modifier onlyOwner() {
-        require(msg.sender == owner);
+        require(msg.sender == owner, "this function can only be called by owner");
         _;
     }
 
-    modifier unlocked() {
-        require(block.timestamp >= deploymentTime + lockTime);
-        _;
-    }
 }

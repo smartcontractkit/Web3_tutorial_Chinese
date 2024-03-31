@@ -18,10 +18,12 @@
 - `npx hardhat env-enc set-pw` 为 `.env.enc` 设置密码
 - 添加环境变量`npx hardhat env-enc set`: `PRIVATE_KEY`, `PRIVATE_KEY_1`, `SEPOLIA_RPC_URL` 和 `ETHERSCAN_API_KEY`
 5. 编译并且与 `FundMe.sol` 交互
-- `npx hardhat run script/deploy.js --network sepolia` 运行 deploy 脚本。
+- `npx hardhat run scripts/deployFundMe.js --network sepolia` 运行 deploy 脚本。
 6. 在 [Sepolia 区块链浏览器](https://sepolia.etherscan.io/)中查看验证的合约
+7. [可选] 运行 `npx hardhat deploy-fundme --network sepolia` 通过hardhat task部署`FundMe`合约
+8. [可选] 运行 `npx hardhat fund-fundme --network sepolia`通过hardhat task与`FundMe`合约交互
 
-更多的相关内容请查看[Web3_tutorial](https://github.com/QingyangKong/Web3_tutorial)的 `README.md`。
+更多的相关内容请查看[Web3_tutorial](https://github.com/smartcontractkit/Web3_tutorial_Chinese/tree/main)的 `README.md`。
 
 
 ## introduction
@@ -43,4 +45,4 @@ In lesson 4, you will learn how to compile, deploy, and interact with contracts 
 5. Compile and interact with `FundMe.sol`
 Run the deploy script with `npx hardhat run script/deploy.js --network sepolia`.
 View verified contracts on the [SepoliaScan](https://sepolia.etherscan.io/).
-6. For more related content, please refer to the README.md of [Web3_tutorial](https://github.com/QingyangKong/Web3_tutorial).
+6. For more related content, please refer to the README.md of [Web3_tutorial](https://github.com/smartcontractkit/Web3_tutorial_Chinese/tree/main).
