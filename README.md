@@ -391,6 +391,8 @@ Solidity 官方文档中，关于数据和结构体，英文文档比中文文�
 ## Hardhat 测试介绍
 - [智能合约测试](https://ethereum.org/zh/developers/docs/smart-contracts/testing/)
 - [Hardhat test官方文档](https://hardhat.org/tutorial/testing-contracts)
+- [mocha官网](https://mochajs.org/)
+- [chai官网](https://www.chaijs.com/)
 
 ## Hardhat deploy
 - [Hardhat Deploy官方文档](https://hardhat.org/hardhat-runner/docs/guides/deploying)
