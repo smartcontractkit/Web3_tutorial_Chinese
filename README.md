@@ -415,7 +415,7 @@ Solidity 官方文档中，关于数据和结构体，英文文档比中文文�
 恭喜完成第五课的学习！
 <br>:tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada::tada:<br>
 
-# 第六课：Hardhat基础：部署交互FundMe
+# 第六课：跨链应用
 <b>第六课视频教程：WIP</b><br>
 <b>第六课代码：https://github.com/smartcontractkit/Web3_tutorial_Chinese/tree/main/lesson-6 <b>
 
