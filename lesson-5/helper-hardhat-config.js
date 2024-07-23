@@ -1,23 +1,22 @@
+const DECIMAL = 8
+const INITIAL_ANSWER = 300000000000
+const devlopmentChains = ["hardhat", "local"]
+const LOCK_TIME = 180
+const CONFIRMATIONS = 5
 const networkConfig = {
     11155111: {
-        name: "sepolia",
-        ethUsdPriceFeedAddr: "0x694AA1769357215DE4FAC081bf1f309aDC325306",
+        ethUsdDataFeed: "0x694AA1769357215DE4FAC081bf1f309aDC325306"
     },
-    80001: {
-        name: "mumbai",
-        ethUsdPriceFeedAddr: "0x0715A7794a1dc8e42615F059dD6e406A6594651A"
+    97: {
+        ethUsdDataFeed: "0x143db3CEEfbdfe5631aDD3E50f7614B6ba708BA7"
     }
 }
 
-const developmentChains = ["hardhat", "localhost"]
-const DECIMALS = 8
-const INITIAL_ANSWER = 300000000000
-const LOCK_TIME = 1000
-
 module.exports = {
-    networkConfig,
-    developmentChains,
-    DECIMALS,
+    DECIMAL,
     INITIAL_ANSWER,
-    LOCK_TIME
+    devlopmentChains,
+    networkConfig,
+    LOCK_TIME,
+    CONFIRMATIONS
 }

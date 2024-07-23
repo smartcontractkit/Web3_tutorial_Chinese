@@ -16,7 +16,7 @@
 -  运行 `npm install` 安装 NPM package
 4. 添加环境变量
 - `npx hardhat env-enc set-pw` 为 `.env.enc` 设置密码
-- 添加环境变量`npx hardhat env-enc set`: `PRIVATE_KEY`, `PRIVATE_KEY_1`, `SEPOLIA_RPC_URL` 和 `ETHERSCAN_API_KEY`
+- 添加环境变量`npx hardhat env-enc set`: `PRIVATE_KEY`, `PRIVATE_KEY_1`, `SEPOLIA_URL` 和 `ETHERSCAN_API_KEY`
 5. 对 `FundMe.sol` 进行单元测试
 - `npx hardhat test` 运行单元测试脚本。
 6. 对 `FundMe.sol` 进行集成测试
