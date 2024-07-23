@@ -7,10 +7,10 @@ task("lock-and-cross")
     .addOptionalParam("receiver", "receiver in the destination chain")
     .setAction(async(taskArgs, hre) => {
         // get tokenId from parameter
-        const tokenId = taskArgs.tokenId
+        const tokenId = taskArgs.tokenid
 
-        const { deployer } = await getNamedAccounts()
-        console.log(`deployer is ${deployer}`)
+        const { firstAccount } = await getNamedAccounts()
+        console.log(`deployer is ${firstAccount}`)
 
         // get receiver contract 
         // deployed contract will be used if there is no receiver provided
@@ -30,32 +30,33 @@ task("lock-and-cross")
             destChainSelector = taskArgs.chainselector
         } else {
             destChainSelector = networkConfig[network.config.chainId].companionChainSelector
-            console.log(`ChainSelector of dest chain is ${destChainSelector}`)            
         }
         console.log(`destination chain selector is ${destChainSelector}`)
 
         const linkTokenAddr = networkConfig[network.config.chainId].linkToken
         const linkToken = await ethers.getContractAt("LinkToken", linkTokenAddr)
-        const nftLockAndReleasePool = await deployments.get("NFTPoolLockAndRelease")
-
+        const nftPoolLockAndRelease = await ethers
+            .getContract("NFTPoolLockAndRelease", firstAccount)
+        
         // transfer 10 LINK token from deployer to pool
-        const balanceBefore = await linkToken.balanceOf(nftLockAndReleasePool.address)
+        const balanceBefore = await linkToken.balanceOf(nftPoolLockAndRelease.target)
         console.log(`balance before: ${balanceBefore}`)
-        const transferTx = await linkToken.transfer(nftLockAndReleasePool.address, ethers.parseEther("10"))
+        const transferTx = await linkToken.transfer(nftPoolLockAndRelease.target, ethers.parseEther("10"))
         await transferTx.wait(6)
-        const balanceAfter = await linkToken.balanceOf(nftLockAndReleasePool.address)
+        const balanceAfter = await linkToken.balanceOf(nftPoolLockAndRelease.target)
         console.log(`balance after: ${balanceAfter}`)
 
         // approve the pool have the permision to transfer deployer's token
-        const nft = await ethers.getContract("MyToken", deployer)
-        await nft.approve(nftLockAndReleasePool.address, 0)
+        const nft = await ethers.getContract("MyToken", firstAccount)
+        await nft.approve(nftPoolLockAndRelease.target, tokenId)
         console.log("approve successfully")
 
         // ccip send
-        const nftPoolLockAndRelease = await ethers.getContract("NFTPoolLockAndRelease", deployer)
-        const lockAndCrossTx = await nftPoolLockAndRelease.lockAndCrossChainNft(
+        console.log(`${tokenId}, ${firstAccount}, ${destChainSelector}, ${destReceiver}`)
+        const lockAndCrossTx = await nftPoolLockAndRelease
+            .lockAndSendNFT(
             tokenId, 
-            deployer, 
+            firstAccount, 
             destChainSelector, 
             destReceiver
         )

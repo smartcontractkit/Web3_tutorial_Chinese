@@ -1,8 +1,8 @@
 const { task } = require("hardhat/config")
 
-task("check-wrapped-nft").setAction(async(taskArgs, hre) => {
-    const {deployer} = await getNamedAccounts()
-    const nft = await ethers.getContract("WrappedMyToken", deployer)
+task("check-nft").setAction(async(taskArgs, hre) => {
+    const { firstAccount } = await getNamedAccounts()
+    const nft = await ethers.getContract("MyToken", firstAccount)
 
     console.log("checking status of ERC-721")
     const totalSupply = await nft.totalSupply()
@@ -11,7 +11,6 @@ task("check-wrapped-nft").setAction(async(taskArgs, hre) => {
         const owner = await nft.ownerOf(tokenId)
         console.log(`TokenId: ${tokenId}, Owner is ${owner}`)
     }
-
 })
 
 module.exports = {}

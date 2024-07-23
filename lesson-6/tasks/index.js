@@ -1,8 +1,0 @@
-// exports.deployContract = require("./deploy-contract")
-// exports.blockNumber = require("./block-number")
-exports.mintNft = require("./mint-nft.js")
-exports.lockAndCross = require("./lock-and-cross.js")
-exports.checkNft = require("./check-nft.js")
-exports.checkWrappedNft = require("./check-wrapped-nft.js")
-exports.burnAndCross = require("./burn-and-cross.js")
-exports.claimNft = require("./claim-nft.js")

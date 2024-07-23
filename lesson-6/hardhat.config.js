@@ -1,71 +1,50 @@
+require("@chainlink/env-enc").config()
 require("@nomicfoundation/hardhat-toolbox");
-require("@chainlink/env-enc").config();
-require("./tasks")
-require('hardhat-deploy');
+require("@nomicfoundation/hardhat-ethers");
+require("hardhat-deploy");
 require("hardhat-deploy-ethers");
-require('@nomicfoundation/hardhat-chai-matchers');
-require('@nomicfoundation/hardhat-ethers');
-require('@typechain/hardhat');
-require('hardhat-gas-reporter');
-require('solidity-coverage');
+require("./task")
 
-const PRIVATE_KEY = process.env.PRIVATE_KEY;
-const PRIVATE_KEY_1 = process.env.PRIVATE_KEY_1;
-const SEPOLIA_RPC_URL = process.env.SEPOLIA_RPC_URL;
-const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
-const AVALANCHE_RPC_URL = process.env.AVALANCHE_RPC_URL;
+
+const PRIVATE_KEY = process.env.PRIVATE_KEY
+const SEPOLIA_RPC_URL = process.env.SEPOLIA_RPC_URL
+const AMOY_RPC_URL = process.env.AMOY_RPC_URL
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  solidity: {
+  solidity:{
     compilers: [
-      { version: "0.8.24" },
-      { version: "0.7.0" },
-      { 
-        version: "0.8.19",
-        settings: {
-          optimizer: {
-            enabled: true,
-            runs: 1,
-          },
-        },
+      {
+        version: "0.8.20"
       },
+      {
+        version: "0.8.19"
+      }
     ]
   },
-  etherscan: {
-    // Your API key for Etherscan
-    // Obtain one at https://etherscan.io/
-    apiKey: ETHERSCAN_API_KEY
+  namedAccounts: {
+    firstAccount: {
+      default: 0
+    }
   },
   networks: {
     sepolia: {
       url: SEPOLIA_RPC_URL,
-      accounts: [PRIVATE_KEY, PRIVATE_KEY_1],
+      accounts: [PRIVATE_KEY],
       chainId: 11155111,
       blockConfirmations: 6,
       companionNetworks: {
-        destChain: "fuji",
-      },
+        destChain: "amoy"
+      }
     },
-    fuji: {
-      url: AVALANCHE_RPC_URL,
-      accounts: [PRIVATE_KEY, PRIVATE_KEY_1],
-      chainId: 43113,
+    amoy: {
+      url: AMOY_RPC_URL,
+      accounts: [PRIVATE_KEY],
+      chainId: 80002,
       blockConfirmations: 6,
       companionNetworks: {
         destChain: "sepolia"
       }
-    },
-    hardhat: {
-      allowUnlimitedContractSize: true,
     }
-  },
-  namedAccounts: {
-    deployer: {
-      default: 0
-    },
-    funder: {
-      default: 1
-    }
-  },
+  }
 };

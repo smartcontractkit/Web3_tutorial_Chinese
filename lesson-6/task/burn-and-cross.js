@@ -6,23 +6,23 @@ task("burn-and-cross")
     .addOptionalParam("chainselector", "chain selector of destination chain")
     .addOptionalParam("receiver", "receiver in the destination chain")
     .setAction(async(taskArgs, hre) => {
-        const { deployer } = await getNamedAccounts()
+        const { firstAccount } = await getNamedAccounts()
 
         // get token id from parameter
         const tokenId = taskArgs.tokenid
         
+        const wnft = await ethers.getContract("WrappedNFT", firstAccount)
+        const nftPoolBurnAndMint = await ethers.getContract("NFTPoolBurnAndMint", firstAccount)
+        
         // approve the pool have the permision to transfer deployer's token
-        const wnft = await ethers.getContract("WrappedMyToken", deployer)
-        const nftPoolBurnAndMintDeployment = await deployments.get("NFTPoolBurnAndMint")
-        const nftPoolBurnAndMintAddr = nftPoolBurnAndMintDeployment.address
-        const approveTx = await wnft.approve(nftPoolBurnAndMintAddr, 0)
+        const approveTx = await wnft.approve(nftPoolBurnAndMint.target, tokenId)
         await approveTx.wait(6)
 
         // transfer 10 LINK token from deployer to pool
         console.log("transfering 10 LINK token to NFTPoolBurnAndMint contract")
         const linkAddr = networkConfig[network.config.chainId].linkToken
         const linkToken = await ethers.getContractAt("LinkToken", linkAddr)
-        const transferTx = await linkToken.transfer(nftPoolBurnAndMintAddr, ethers.parseEther("10"))
+        const transferTx = await linkToken.transfer(nftPoolBurnAndMint.target, ethers.parseEther("10"))
         await transferTx.wait(6)
 
         // get chain selector
@@ -42,8 +42,7 @@ task("burn-and-cross")
         }
 
         // burn and cross
-        const nftPoolBurnAndMint = await ethers.getContract("NFTPoolBurnAndMint", deployer)
-        const burnAndCrossTx = await nftPoolBurnAndMint.burnAndCrossChainNft(tokenId, deployer, chainSelector, receiver)
+        const burnAndCrossTx = await nftPoolBurnAndMint.burnAndMint(tokenId, firstAccount, chainSelector, receiver)
         console.log(`NFT burned and crossed with txhash ${burnAndCrossTx.hash}`)
 })
 
