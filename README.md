@@ -435,12 +435,13 @@ Solidity 官方文档中，关于数据和结构体，英文文档比中文文�
 - [ERC1155(OpenZeppelin)](https://docs.openzeppelin.com/contracts/3.x/erc1155)
 - [ERC721 vs ERC1155](https://www.alchemy.com/blog/comparing-erc-721-to-erc-1155)
 
-## Chainlink CCIP
+## Chainlink CCIP (跨链互操作协议)
 - [什么是链间互操作性](https://chain.link/education-hub/blockchain-interoperability)
 - [Chainlink CCIP官方文档](https://docs.chain.link/ccip)
 - [跨链桥的7个风险](https://blog.chain.link/cross-chain-bridge-vulnerabilities/)
 - [使用CCIP的5个例子](https://blog.chain.link/how-to-use-ccip/)
 - [区块状态](https://www.alchemy.com/overviews/ethereum-commitment-levels)
+- [跨链桥的5种安全等级](https://blog.chain.link/five-levels-cross-chain-security/)
 
 ## 跨链资产池
 - [NFT池子样例合约](https://github.com/QingyangKong/Web3_tutorial_lesson6/blob/1-chainlink-local/contracts/NFTPoolLockAndRelease.sol)
@@ -885,12 +886,13 @@ Congratulations! You complete the lesson 5！
 - [ERC1155(OpenZeppelin)](https://docs.openzeppelin.com/contracts/3.x/erc1155)
 - [ERC721 vs ERC1155](https://www.alchemy.com/blog/comparing-erc-721-to-erc-1155)
 
-## Chainlink CCIP
-- [什么是链间互操作性](https://chain.link/education-hub/blockchain-interoperability)
-- [Chainlink CCIP官方文档](https://docs.chain.link/ccip)
-- [跨链桥的7个风险](https://blog.chain.link/cross-chain-bridge-vulnerabilities/)
-- [使用CCIP的5个例子](https://blog.chain.link/how-to-use-ccip/)
-- [区块状态](https://www.alchemy.com/overviews/ethereum-commitment-levels)
+## Chainlink CCIP (Cross-chain Interoperability Protocol)
+- [What is blockchain interoperability](https://chain.link/education-hub/blockchain-interoperability)
+- [Chainlink CCIP official document](https://docs.chain.link/ccip)
+- [Cross chain bridge vilnerabilities](https://blog.chain.link/cross-chain-bridge-vulnerabilities/)
+- [CCIP use cases](https://blog.chain.link/how-to-use-ccip/)
+- [ethereum commitment levels](https://www.alchemy.com/overviews/ethereum-commitment-levels)
+- [The Five Levels of Cross-Chain Security](https://blog.chain.link/five-levels-cross-chain-security/)
 
 ## Token pool in CCIP
 - [NFT pool smart conrtact](https://github.com/smartcontractkit/Web3_tutorial_Chinese/blob/main/lesson-6/contracts/NFTPoolLockAndRelease.sol)
